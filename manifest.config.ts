@@ -1,0 +1,63 @@
+import { defineManifest } from "@crxjs/vite-plugin";
+
+export default defineManifest({
+  manifest_version: 3,
+  name: "Save my S",
+  description: "Redacts sensitive info before it's sent to LLM web UIs. 100% local.",
+  version: "0.1.0",
+  icons: {
+    "16": "icons/16.png",
+    "32": "icons/32.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png",
+  },
+  action: {
+    default_title: "Save my S",
+    default_popup: "src/popup/index.html",
+    default_icon: {
+      "16": "icons/16.png",
+      "32": "icons/32.png",
+      "48": "icons/48.png",
+      "128": "icons/128.png",
+    },
+  },
+  options_ui: {
+    page: "src/options/index.html",
+    open_in_tab: true,
+  },
+  content_scripts: [
+    {
+      matches: [
+        "https://chatgpt.com/*",
+        "https://chat.openai.com/*",
+        "https://claude.ai/*",
+        "https://gemini.google.com/*",
+        "https://aistudio.google.com/*",
+        "https://copilot.microsoft.com/*",
+        "https://chat.mistral.ai/*",
+        "https://perplexity.ai/*",
+        "https://www.perplexity.ai/*",
+        "https://poe.com/*",
+        "https://character.ai/*",
+        "https://*.character.ai/*",
+        "https://huggingface.co/chat/*",
+        "https://grok.com/*",
+        "https://chat.deepseek.com/*",
+        "https://you.com/*",
+        "https://phind.com/*",
+        "https://www.phind.com/*",
+        "https://meta.ai/*",
+        "https://www.meta.ai/*",
+        "https://pi.ai/*",
+        "https://chat.qwen.ai/*",
+        "https://openrouter.ai/*",
+        "https://lmarena.ai/*",
+      ],
+      js: ["src/content/index.ts"],
+      run_at: "document_idle",
+      all_frames: false,
+    },
+  ],
+  permissions: ["storage", "tabs"],
+  host_permissions: [],
+});

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Save my S</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <div class="pop">
+      <header class="head">
+        <img src="/icons/48.png" alt="" class="logo" />
+        <div class="meta">
+          <div class="title">Save my S</div>
+          <div class="site" id="site">—</div>
+        </div>
+        <label class="switch" title="Enable / disable">
+          <input type="checkbox" id="enabled" />
+          <span class="slider"></span>
+        </label>
+      </header>
+
+      <section class="status-card" id="statusCard">
+        <span class="dot"></span>
+        <span id="statusText">Active on this site</span>
+      </section>
+
+      <section class="totals">
+        <div class="big" id="total">0</div>
+        <div class="big-label">total detections</div>
+      </section>
+
+      <section class="breakdown" id="breakdown"></section>
+
+      <footer class="foot">
+        <button class="link" id="allowlistThis">Disable on this site</button>
+        <button class="link" id="openOptions">Settings →</button>
+      </footer>
+    </div>
+    <script type="module" src="./index.ts"></script>
+  </body>
+</html>

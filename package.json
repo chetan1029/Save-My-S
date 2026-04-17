@@ -1,0 +1,20 @@
+{
+  "name": "save-my-s",
+  "version": "0.1.0",
+  "description": "Chrome extension that redacts sensitive info before it's sent to LLM web UIs.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "typecheck": "tsc --noEmit",
+    "icons": "node scripts/generate-icons.mjs"
+  },
+  "devDependencies": {
+    "@crxjs/vite-plugin": "^2.0.0-beta.25",
+    "@resvg/resvg-js": "^2.6.2",
+    "@types/chrome": "^0.0.268",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.10"
+  }
+}

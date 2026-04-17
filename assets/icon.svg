@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="shield" x1="64" y1="8" x2="64" y2="120" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#047857"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Shield -->
+  <path d="M64 8 L112 20 L112 58 C112 90 92 112 64 120 C36 112 16 90 16 58 L16 20 Z"
+        fill="url(#shield)"
+        stroke="#064e3b"
+        stroke-width="3"
+        stroke-linejoin="round"/>
+
+  <!-- Stylized S (pure path so it renders identically across rasterizers) -->
+  <path d="
+      M 82 42
+      C 80 33, 70 29, 60 30
+      C 48 31, 40 38, 40 48
+      C 40 57, 47 62, 58 65
+      L 70 68
+      C 78 70, 82 73, 82 78
+      C 82 85, 74 90, 64 90
+      C 54 90, 46 86, 44 78"
+    fill="none"
+    stroke="#ffffff"
+    stroke-width="9"
+    stroke-linecap="round"
+    stroke-linejoin="round"/>
+</svg>

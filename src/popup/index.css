@@ -1,0 +1,69 @@
+:root {
+  color-scheme: dark;
+  --bg: #0f0f12;
+  --surface: #1a1a1f;
+  --border: #2a2a31;
+  --text: #f5f5f7;
+  --muted: #9ca3af;
+  --accent: #10b981;
+  --warn: #f59e0b;
+  --danger: #f87171;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  font-size: 13px;
+}
+
+.pop { width: 300px; padding: 14px 14px 10px; }
+
+.head { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+.head .logo { width: 28px; height: 28px; flex-shrink: 0; display: block; }
+.head .meta { flex: 1; min-width: 0; }
+.title { font-weight: 700; font-size: 14px; }
+.site {
+  color: var(--muted); font-size: 11.5px; margin-top: 2px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+
+.status-card {
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 10px; background: var(--surface); border: 1px solid var(--border);
+  border-radius: 8px; font-size: 12px; margin-bottom: 12px;
+}
+.dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+.status-card.inactive .dot { background: var(--muted); }
+.status-card.disabled .dot { background: var(--danger); }
+
+.totals { text-align: center; padding: 8px 0 4px; }
+.big { font-size: 30px; font-weight: 700; line-height: 1; }
+.big-label { color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; margin-top: 4px; }
+
+.breakdown {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 4px;
+  margin: 12px 0;
+}
+.row {
+  display: flex; justify-content: space-between;
+  padding: 5px 8px; background: var(--surface); border-radius: 6px;
+  font-size: 11.5px;
+}
+.row .k { color: var(--muted); }
+.row .v { font-weight: 600; }
+.empty { grid-column: 1 / -1; text-align: center; color: var(--muted); font-size: 11.5px; padding: 10px; }
+
+.foot { display: flex; justify-content: space-between; padding-top: 8px; border-top: 1px solid var(--border); }
+.link {
+  background: transparent; color: var(--muted); border: 0; padding: 6px 0;
+  font-size: 12px; cursor: pointer; font-family: inherit;
+}
+.link:hover { color: var(--text); }
+
+.switch { position: relative; display: inline-block; width: 36px; height: 20px; flex: 0 0 auto; }
+.switch input { opacity: 0; width: 0; height: 0; }
+.slider { position: absolute; cursor: pointer; inset: 0; background: #3a3a42; border-radius: 24px; transition: 0.15s; }
+.slider::before { position: absolute; content: ""; height: 14px; width: 14px; left: 3px; top: 3px; background: white; border-radius: 50%; transition: 0.15s; }
+.switch input:checked + .slider { background: var(--accent); }
+.switch input:checked + .slider::before { transform: translateX(16px); }

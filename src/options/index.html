@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Save my S — Settings</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="page-head">
+        <img src="/icons/128.png" alt="" class="page-logo" />
+        <div class="page-text">
+          <h1>Save my S</h1>
+          <p class="tagline">Local-only redaction for ChatGPT, Claude, and Gemini.</p>
+        </div>
+      </header>
+
+      <section class="card">
+        <div class="row">
+          <div>
+            <h2>Extension</h2>
+            <p class="muted">Master switch. When off, no detection or interception happens.</p>
+          </div>
+          <label class="switch">
+            <input type="checkbox" id="enabled" />
+            <span class="slider"></span>
+          </label>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="row">
+          <div>
+            <h2>Where it's active</h2>
+            <p class="muted">
+              The extension runs on these AI chat sites. Turn a site off to skip
+              detection there; it'll be added to your domain allowlist below.
+            </p>
+          </div>
+          <button type="button" class="btn btn-ghost" id="enableAllSites">Enable all</button>
+        </div>
+        <div id="sites" class="sites"></div>
+      </section>
+
+      <section class="card">
+        <h2>Detectors</h2>
+        <p class="muted">Toggle which patterns are scanned for. All run locally.</p>
+        <div id="detectors" class="detectors"></div>
+      </section>
+
+      <section class="card">
+        <h2>Custom patterns</h2>
+        <p class="muted">
+          Add your own regex (e.g. internal hostnames, project codenames).
+          Be careful — bad regex will be ignored silently.
+        </p>
+        <div id="patterns" class="patterns"></div>
+        <button type="button" class="btn" id="addPattern">+ Add pattern</button>
+      </section>
+
+      <section class="card">
+        <h2>Domain allowlist</h2>
+        <p class="muted">
+          Domains where the extension does nothing. One per line. Use <code>*.example.com</code>
+          for subdomains.
+        </p>
+        <textarea id="allowlist" rows="4" placeholder="internal.mycompany.com&#10;*.staging.example.com"></textarea>
+      </section>
+
+      <section class="card">
+        <h2>Stats</h2>
+        <div id="stats" class="stats"></div>
+        <button type="button" class="btn btn-ghost" id="resetStats">Reset counters</button>
+      </section>
+
+      <footer class="page-foot">
+        <span class="hint">Changes save automatically.</span>
+        <span id="status" class="status"></span>
+      </footer>
+    </main>
+    <script type="module" src="./index.ts"></script>
+  </body>
+</html>
